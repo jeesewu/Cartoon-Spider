@@ -5,161 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cartoon-Spider</title>
-    <style>
-      :root {
-        --spider-body-color: #523132;
-        --spider-eye-color: white;
-        --spider-line: white;
-        --bg-color: #786969;
-        --spider-width: 50vw;
-      }
-      * {
-        padding: 0;
-        margin: 0;
-      }
-
-      .paint {
-        background-color: var(--bg-color);
-        padding: 10%;
-      }
-
-      .spider {
-        width: var(--spider-width);
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .spider .line {
-        width: calc(var(--spider-width) * (2 / 380));
-        height: calc(var(--spider-width) * (150 / 380));
-        background: var(--spider-line);
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .spider .body {
-        width: 100%;
-        height: calc(var(--spider-width) * (400 / 380));
-        margin-left: auto;
-        margin-right: auto;
-        background: var(--spider-body-color);
-        border-radius: 50% 50% 50% 50%/55% 55% 45% 45%;
-        position: relative;
-      }
-
-      .spider .body .eyes {
-        position: relative;
-        top: calc(var(--spider-width) * (265 / 380));
-        text-align: center;
-      }
-
-      .spider .body .eyes .eye {
-        display: inline-block;
-        width: calc(var(--spider-width) * (65 / 380));
-        height: calc(var(--spider-width) * (80 / 380));
-        background: var(--spider-eye-color);
-        border-radius: 50% 50% 50% 50%/55% 55% 45% 45%;
-        position: relative;
-      }
-
-      .spider .body .eyes .eye.left {
-        left: calc(var(--spider-width) * (10 / 380));
-        transform: rotate(10deg);
-        z-index: 1;
-      }
-
-      .spider .body .eyes .eye.right {
-        left: calc(var(--spider-width) * (-10 / 380));
-        transform: rotate(-10deg);
-      }
-
-      .spider .body .eyes .eye.left::before,
-      .spider .body .eyes .eye.right::before {
-        content: "";
-        display: block;
-        width: calc(var(--spider-width) * (30 / 380));
-        height: calc(var(--spider-width) * (30 / 380));
-        background: var(--spider-body-color);
-        border-radius: 50%;
-        position: relative;
-      }
-
-      .spider .body .eyes .eye.left::before {
-        top: calc(var(--spider-width) * (20 / 380));
-        left: calc(var(--spider-width) * (28 / 380));
-      }
-
-      .spider .body .eyes .eye.right::before {
-        top: calc(var(--spider-width) * (25 / 380));
-        left: calc(var(--spider-width) * (33 / 380));
-      }
-
-      .spider .body .legs {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .spider .body .legs .leg {
-        width: calc(var(--spider-width) * (30 / 380));
-        height: calc(var(--spider-width) * (70 / 380));
-        background: var(--spider-body-color);
-        position: absolute;
-      }
-
-      .spider .body .legs .leg.left {
-        border-radius: 40% 0 0 40%/40% 0 0 40%;
-      }
-
-      .spider .body .legs .leg.right {
-        border-radius: 0 40% 40% 0/0 40% 40% 0;
-      }
-
-      .spider .body .legs .leg.left.first {
-        top: calc(var(--spider-width) * (-180 / 380));
-        left: calc(var(--spider-width) * (-140 / 380));
-        transform: rotate(45deg);
-      }
-      .spider .body .legs .leg.right.first {
-        top: calc(var(--spider-width) * (-180 / 380));
-        left: calc(var(--spider-width) * (110 / 380));
-        transform: rotate(-45deg);
-      }
-      .spider .body .legs .leg.left.second {
-        top: calc(var(--spider-width) * (-80 / 380));
-        left: calc(var(--spider-width) * (-200 / 380));
-        transform: rotate(15deg);
-      }
-      .spider .body .legs .leg.right.second {
-        top: calc(var(--spider-width) * (-80 / 380));
-        left: calc(var(--spider-width) * (170 / 380));
-        transform: rotate(-15deg);
-      }
-      .spider .body .legs .leg.left.third {
-        top: calc(var(--spider-width) * (60 / 380));
-        left: calc(var(--spider-width) * (-195 / 380));
-        transform: rotate(-28deg);
-      }
-      .spider .body .legs .leg.right.third {
-        top: calc(var(--spider-width) * (60 / 380));
-        left: calc(var(--spider-width) * (165 / 380));
-        transform: rotate(28deg);
-      }
-      .spider .body .legs .leg.left.fourth {
-        top: calc(var(--spider-width) * (140 / 380));
-        left: calc(var(--spider-width) * (-130 / 380));
-        transform: rotate(-60deg);
-      }
-      .spider .body .legs .leg.right.fourth {
-        top: calc(var(--spider-width) * (140 / 380));
-        left: calc(var(--spider-width) * (100 / 380));
-        transform: rotate(60deg);
-      }
-    </style>
+    <link rel="stylesheet" href="baseStyle.css" />
+    <style class="style"></style>
   </head>
   <body>
-    <div class="paint">
+    <div class="code-wrapper">
+      <pre class="code"></pre>
+      <div class="controller">
+        <button data-speed="slow" class="slow">慢速</button>
+        <button data-speed="normal" class="normal active">中速</button>
+        <button data-speed="fast" class="fast">快速</button>
+      </div>
+    </div>
+    <div class="spider-wrapper">
       <div class="spider">
         <div class="line"></div>
         <div class="body">
@@ -184,5 +42,7 @@
         </div>
       </div>
     </div>
+
+    <script src="main.js"></script>
   </body>
 </html>
