@@ -5,12 +5,11 @@
 }
 
 body {
-  height: 100vh;
   width: 100vw;
 }
 
 .code-wrapper {
-  height: 50%;
+  height: 30vh;
   background: #1E1E1E;}
   .code {
     padding: 10px;
@@ -19,25 +18,44 @@ body {
     overflow: auto;}
     .controller {
       position: fixed;
-      top: 3%;
-      right: 3%;}
+      top: 10px;
+      right: 10px;}
       button {
-        background-color: white;
+        background: white;
         color: black;
         padding: 5px;
         border-radius: 5px;
         border: none;
         outline: black;}
       button:hover {
-        background-color: #0095FF;
+        background: #0095FF;
         color:white;}
       button.active {
         box-shadow: 0px 0px 3px black;
-        background-color: #0095FF;
+        background: #0095FF;
         color:white;
 }
 
 .spider-wrapper {
-  height: 50%;
-  background-color: #786969;
+  background: #786969;
+  height: 70vh;}
+  .spider {
+    --spider-line: white;
+    --spider-body-color: #523132;
+    --spider-eye-color: white;
+    --spider-width: 250px;
+    width: var(--spider-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:1000px) {
+  body{
+    display: flex;}
+    .code-wrapper,
+    .spider-wrapper{
+      height: 100vh;
+      width: 50%;}
+      .spider {
+        --spider-width: 400px;}
 }

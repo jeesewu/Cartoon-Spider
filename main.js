@@ -1,18 +1,9 @@
-const cssStr = `/* 画蜘蛛咯 */
-.spider {
-  --spider-line: white;
-  --spider-body-color: #523132;
-  --spider-eye-color: white;
-  --spider-width: 250px;
-  width: var(--spider-width);
-  margin-left: auto;
-  margin-right: auto;
-}
+const cssStr = `/* 画一只蜘蛛 */
 
 /* 蜘蛛丝 */
 .line {
   width: calc(var(--spider-width) * (2 / 380));
-  height: calc(var(--spider-width) * (150 / 380));
+  height: calc(var(--spider-width) * (120 / 380));
   background: var(--spider-line);
   margin-left: auto;
   margin-right: auto;
@@ -144,8 +135,12 @@ function typeTextToDOM({ currentStr = "", addStr }) {
     const char = addStr.charAt(i);
     currentStr += char;
     const highlightedStr = Prism.highlight(currentStr, Prism.languages.css);
-    code.innerHTML = highlightedStr;
-    style.innerHTML = currentStr;
+    if (char !== " " && char !== "\n") {
+      code.innerHTML = highlightedStr;
+    }
+    if (char === "}") {
+      style.innerHTML = currentStr;
+    }
     code.scrollTop = code.scrollHeight;
     i++;
     if (i < addStr.length) {
