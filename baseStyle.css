@@ -1,26 +1,26 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   height: 100vh;
-  overflow: hidden;
+  width: 100vw;
 }
 
 .code-wrapper {
-  width: 100%;
   height: 50%;
-  background: #1E1E1E;
-  padding: 10px;}
+  background: #1E1E1E;}
   .code {
+    padding: 10px;
     color: #DCDDA4;
     height: 100%;
     overflow: auto;}
     .controller {
       position: fixed;
-      top: 2%;
-      right: 2%;}
+      top: 3%;
+      right: 3%;}
       button {
         background-color: white;
         color: black;
@@ -38,7 +38,6 @@ body {
 }
 
 .spider-wrapper {
-  width: 100vw;
   height: 50%;
   background-color: #786969;
 }

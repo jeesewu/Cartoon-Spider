@@ -130,8 +130,7 @@ const cssStr = `/* 画蜘蛛咯 */
   top: calc(var(--spider-width) * (25 / 380));
   left: calc(var(--spider-width) * (33 / 380));
 }
-/* 完成！ */
-`;
+/* 完成！ */`;
 
 let time = 20;
 typeTextToDOM({ addStr: cssStr });
