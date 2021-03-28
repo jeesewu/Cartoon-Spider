@@ -1,4 +1,20 @@
 const cssStr = `/* 画一只蜘蛛 */
+.spider {
+  --spider-line: white;
+  --spider-body-color: #523132;
+  --spider-eye-color: white;
+  --spider-width: 250px;
+  width: var(--spider-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 大屏幕 大蜘蛛 */
+@media (min-width:1000px) {
+  .spider {
+    --spider-width: 400px;
+  }
+}
 
 /* 蜘蛛丝 */
 .line {

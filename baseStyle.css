@@ -38,17 +38,9 @@ body {
 
 .spider-wrapper {
   background: #786969;
-  height: 70vh;}
-  .spider {
-    --spider-line: white;
-    --spider-body-color: #523132;
-    --spider-eye-color: white;
-    --spider-width: 250px;
-    width: var(--spider-width);
-    margin-left: auto;
-    margin-right: auto;
+  height: 70vh;
 }
-
+  
 @media (min-width:1000px) {
   body{
     display: flex;}
@@ -56,6 +48,4 @@ body {
     .spider-wrapper{
       height: 100vh;
       width: 50%;}
-      .spider {
-        --spider-width: 400px;}
 }
