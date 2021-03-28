@@ -144,7 +144,8 @@ function typeTextToDOM({ currentStr = "", addStr }) {
   setTimeout(function type() {
     const char = addStr.charAt(i);
     currentStr += char;
-    code.innerHTML = currentStr;
+    const highlightedStr = Prism.highlight(currentStr, Prism.languages.css);
+    code.innerHTML = highlightedStr;
     style.innerHTML = currentStr;
     code.scrollTop = code.scrollHeight;
     i++;
